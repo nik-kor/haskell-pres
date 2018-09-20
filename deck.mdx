@@ -1,0 +1,238 @@
+import { Head } from 'mdx-deck'
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
+<Head>
+  <title>Haskell</title>
+</Head>
+
+# Haskell
+
+<img src="./images/haskell.png" style={{ height: '65%', width: '65%' }} />
+
+export { hack as theme } from 'mdx-deck/themes'
+
+---
+
+# Disclaimer
+
+> <ul>
+>     <Appear>
+>         <li>Idk haskell</li>
+>         <li>super short intro</li>
+>     </Appear>
+> </ul>
+
+---
+
+# Motto
+
+<a href='https://www.haskell.org/' target='_blank'>https://www.haskell.org/</a>
+
+---
+
+# Why is it so hard to master imho
+
+> <ul>
+>     <Appear>
+>         <li>more than 30 years old</li>
+>         <li>requires abstract thinking</li>
+>         <li>need to develop intuition for some concepts(Monads, etc)</li>
+>         <li>you need to change your mindset</li>
+>     </Appear>
+> </ul>
+
+---
+
+# What is the value?
+
+<img src='./images/brings-value.jpg' style={{ height: '45%', width: '45%' }} />
+
+---
+
+> <ul>
+>     <Appear>
+>         <li>pure functions are cool - so lets use them as much as possible</li>
+>         <li>it is strict and unforgiven - you have to be explicit if you want to use impure functions</li>
+>         <li>possible to apply the same ideas in other languages</li>
+>         <li>separation of logic from effects</li>
+>     </Appear>
+> </ul>
+
+---
+
+# The good parts
+
+
+<img src='./images/good-parts.jpg' style={{ height: '70%', width: '70%' }} />
+
+---
+
+<CodeSurfer
+	title="ADT with pattern matching"
+	code={require("!raw-loader!./snippets/adt.hs")}
+	lang="haskell"
+	showNumbers={false}
+	dark={true}
+	steps={[
+		{ range: [1, 4], notes: "Sum type definition" },
+		{ lines: [6], notes: "Usage" },
+		{ range: [8, 11], notes: "Pattern matching" },
+		{ lines: [13], notes: "Product type" },
+	]}
+/>
+
+---
+
+# Complex type system
+
+ - Type classes
+ - higher kinded types
+
+---
+
+<CodeSurfer
+	title="Type classes"
+	code={require("!raw-loader!./snippets/type-classes.hs")}
+	lang="haskell"
+	showNumbers={false}
+	dark={true}
+	steps={[
+		{ range: [1, 2], notes: "type class definition" },
+		{ range: [4, 5], notes: "instance for Integer" },
+		{ range: [7, 9], notes: "Usage" },
+		{ tokens: { 7: [5, 6, 7, 8, 9] }, notes: "Restriction in type declaration" },
+		{ tokens: { 9: [12, 13, 14, 15, 16, 17] }, notes: "Use overloaded function" }
+	]}
+/>
+
+---
+
+<CodeSurfer
+	title="Higher kinded types"
+	code={require("!raw-loader!./snippets/higher-kinded.hs")}
+	lang="haskell"
+	showNumbers={false}
+	dark={true}
+	steps={[
+		{ lines: [1], notes: "Example of type def with parameters" },
+		{ range: [2, 3], notes: "Kind of type" },
+		{ range: [4, 5], notes: "Compare with function composition" },
+		{ range: [7, 9], notes: "Usage" },
+	]}
+/>
+
+---
+
+# Lazyness
+
+In Haskell, the tree doesn’t fall in the woods until you walk through the forest and get to the tree.
+
+---
+
+<CodeSurfer
+	title=""
+	code={require("!raw-loader!./snippets/lazyness.hs")}
+	lang="haskell"
+	showNumbers={false}
+	dark={true}
+	steps={[
+		{ range: [1, 8], notes: "hypo func" },
+		{ range: [3, 4], notes: "Bottom value" },
+		{ lines: [7], notes: "Will break here" },
+		{ range: [10, 15], notes: "in repl" },
+	]}
+/>
+
+---
+
+Effects
+
+<img src='./images/nuke.jpg'/>
+
+---
+
+ - no mutations
+ - no implicit side effects
+
+---
+
+
+# IO data type
+
+> <ul>
+>     <Appear>
+>         <li>IO primarily exists to give us a way to order operations and to disable some of the sharing(cos nonstrictness)</li>
+>         <li>Values of type `IO a` are not an `a`; they’re a description of how you might get an `a`.</li>
+>     </Appear>
+> </ul>
+
+---
+
+<CodeSurfer
+	title="Basic IO"
+	code={require("!raw-loader!./snippets/io.hs")}
+	lang="haskell"
+	showNumbers={false}
+	dark={true}
+	steps={[
+		{ lines: [1, 3], notes: "effectful functions" },
+		{ lines: [5] },
+		{ range: [6, 8] },
+	]}
+/>
+
+---
+
+# :fire: Some hot topics :fire:
+
+---
+
+# how to keep State?
+
+> <ul>
+>     <Appear>
+>         <li>StateT</li>
+>         <li>IORef</li>
+>         <li>ST</li>
+>         <li>MVar</li>
+>         <li>TVar</li>
+>         <li><a href="https://www.youtube.com/watch?v=thyO6p2bMAc&feature=youtu.be" target="_blank">good pres about it</a></li>
+>     </Appear>
+> </ul>
+
+
+
+---
+
+# how to DI?
+
+> <ul>
+>     <Appear>
+>         <li>Forget about it in FP (<a href="https://stackoverflow.com/questions/14327327/dependency-injection-in-haskell-solving-the-task-idiomatically?answertab=active#tab-top" target="_blank">SO thread</a>)</li>
+>         <li>or can use ReaderT</li>
+>     </Appear>
+> </ul>
+
+
+
+---
+
+<img src='./images/too-weird.jpg' />
+
+---
+
+# Takeaways
+
+> <ul>
+>     <Appear>
+>         <li>Haskell is an advanced tool</li>
+>         <li>you need to have a commitment to master it</li>
+>         <li>but you can learn a lot FP from it</li>
+>     </Appear>
+> </ul>
+
+---
+
+Welcome to <a href="https://hellofresh.slack.com/messages/CCU63M932/details/" target="_blank">#fp</a>
+

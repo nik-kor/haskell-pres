@@ -1,0 +1,13 @@
+{
+    "scripts": {
+        "start": "mdx-deck deck.mdx",
+        "pdf": "mdx-deck pdf deck.mdx"
+    },
+    "devDependencies": {
+        "mdx-deck": "^1.7.3"
+    },
+    "dependencies": {
+        "mdx-deck-code-surfer": "^0.4.1",
+        "raw-loader": "^0.5.1"
+    }
+}
