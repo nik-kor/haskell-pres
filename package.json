@@ -1,12 +1,11 @@
 {
     "scripts": {
         "start": "mdx-deck deck.mdx",
-        "pdf": "mdx-deck pdf deck.mdx"
-    },
-    "devDependencies": {
-        "mdx-deck": "^1.7.3"
+        "pdf": "mdx-deck pdf deck.mdx",
+        "build": "mdx-deck build --no-html deck.mdx && cp -r images dist"
     },
     "dependencies": {
+        "mdx-deck": "^1.7.3",
         "mdx-deck-code-surfer": "^0.4.1",
         "raw-loader": "^0.5.1"
     }

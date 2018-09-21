@@ -1,0 +1,6 @@
+*
+!package.json
+!yarn.lock
+!deck.mdx
+!images/
+!snippets/
